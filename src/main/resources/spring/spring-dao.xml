@@ -13,8 +13,7 @@
 
 
 	<!-- 2.数据库连接池 -->
-	<bean id="dataSource"
-		class="com.mchange.v2.c3p0.ComboPooledDataSource"
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<!-- 配置连接池属性 -->
 		<property name="driverClass" value="${jdbc.driver}" />

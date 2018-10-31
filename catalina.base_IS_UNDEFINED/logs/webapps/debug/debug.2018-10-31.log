@@ -1,0 +1,16 @@
+2018-10-31 16:40:42:744 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status,advice) values (?,?,?,?, ?, ?, ?, ?,?,?,?, ?,?) 
+2018-10-31 16:40:42:774 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), null, 测试的店铺(String), test(String), test(String), test(String), test(String), null, 2018-10-31 16:40:42.463(Timestamp), null, 1(Integer), 审核中(String)
+2018-10-31 16:43:37:534 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status,advice) values (?,?,?,?, ?, ?, ?, ?,?,?,?, ?,?) 
+2018-10-31 16:43:37:567 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺(String), test(String), test(String), test(String), test(String), null, 2018-10-31 16:43:37.281(Timestamp), null, 1(Integer), 审核中(String)
+2018-10-31 16:43:37:570 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - <==    Updates: 1
+2018-10-31 16:58:32:060 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
+2018-10-31 16:58:32:084 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的描述(String), 测试地址(String), 2018-10-31 16:58:31.771(Timestamp), 1(Long)
+2018-10-31 16:58:32:091 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2018-10-31 21:59:59:496 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status,advice) values (?,?,?,?, ?, ?, ?, ?,?,?,?, ?,?) 
+2018-10-31 21:59:59:519 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺1(String), test1(String), test1(String), test1(String), null, null, 2018-10-31 21:59:59.479(Timestamp), 2018-10-31 21:59:59.479(Timestamp), 0(Integer), 审核中(String)
+2018-10-31 21:59:59:522 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - <==    Updates: 1
+2018-10-31 21:59:59:529 [main] DEBUG com.louis.o2o.util.ImageUtil - current relativeAddr:C:\Users\louis\Pictures\upload\item\shop\2\2018103121595968979.jpg
+2018-10-31 21:59:59:529 [main] DEBUG com.louis.o2o.util.ImageUtil - current whole Addr:C:\Users\louis\Pictures\projectDev\img\C:\Users\louis\Pictures\upload\item\shop\2\
+2018-10-31 21:59:59:608 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
+2018-10-31 21:59:59:609 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的店铺1(String), test1(String), test1(String), test1(String), C:\Users\louis\Pictures\upload\item\shop\2\2018103121595968979.jpg(String), 2018-10-31 21:59:59.479(Timestamp), 0(Integer), 审核中(String), 2(Integer), 1(Long), 2(Long)
+2018-10-31 21:59:59:610 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - <==    Updates: 1
