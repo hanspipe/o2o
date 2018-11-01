@@ -8,7 +8,7 @@ public class PathUtil {
 		String os = System.getProperty("os.name");
 		String basePath = "";
 		if (os.toLowerCase().startsWith("win")) {
-			basePath = "C:/Users/louis/Pictures/projectDev/img/";
+			basePath = "C:/Users/louis/Pictures/";
 		} else {
 			basePath = "/home/luois/image/";
 		}
@@ -18,7 +18,7 @@ public class PathUtil {
 
 	//返回项目图片子路径
 	public static String getShopImagePath(long shopId) {
-		String imagePath = "C:/Users/louis/Pictures/upload/item/shop/" + shopId + "/";
+		String imagePath = "upload/item/shop/" + shopId + "/";
 		return imagePath.replace("/", separator);
 	}
 }

@@ -2,6 +2,7 @@ package com.louis.o2o.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -46,31 +47,41 @@ public class ImageUtil {
 	 * @param targetAddr
 	 * @return
 	 */
-	public static String generateThumbnail(File thumbnail, String targetAddr) {
+	public static String generateThumbnail(InputStream thumbnailInputStream, String fileName, String targetAddr) {
+		//获取不重复的随机名
 		String realFileName = getRandomFileName();
-		String extension = getFileExtension(thumbnail);
+		//获取文件扩展名
+		String extension = getFileExtension(fileName);
+		//如果目标路径不存在，自动创建
 		makeDirPath(targetAddr);
+		// 获取文件相对路径（带文件名）
 		String relativeAddr = targetAddr + realFileName + extension;
 		logger.debug("current relativeAddr:" + relativeAddr);
+		// 获取文件要保存到的目标路径
 		File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
-		logger.debug("current whole Addr:" + PathUtil.getImgBasePath() + targetAddr);
+		//File dest = new File(relativeAddr);
+		logger.debug("current whole Addr:" + PathUtil.getImgBasePath() + relativeAddr);
+		logger.debug("basePath:" + basePath);
+		// 调用Thumbnails生成带有水印的图片
 		try {
-			Thumbnails.of(thumbnail).size(200, 200)
+			Thumbnails.of(thumbnailInputStream).size(200, 200)
 					.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
 					.outputQuality(0.8f).toFile(dest);
-		} catch (Exception e) {
+		} catch (IOException e) {
 			logger.error(e.toString());
 			e.printStackTrace();
 		}
+		// 返回图片相对地址路径
 		return relativeAddr;
 	}
 
 	/**
-	 * 床架目标路径所涉及到的目录
+	 * 创建目标路径所涉及到的目录
 	 * 
-	 * @param targetAddr
+	 * @param targetAddr 目标文件所属文件夹的相对路径
 	 */
 	private static void makeDirPath(String targetAddr) {
+		// 绝对路径
 		String realFileParentPath = PathUtil.getImgBasePath() + targetAddr;
 		File dirPath = new File(realFileParentPath);
 		if (!dirPath.exists()) {
@@ -84,9 +95,8 @@ public class ImageUtil {
 	 * @param thumbnail
 	 * @return
 	 */
-	private static String getFileExtension(File cFile) {
-		String originalFileName = cFile.getName();
-		return originalFileName.substring(originalFileName.lastIndexOf("."));
+	private static String getFileExtension(String fileName) {
+		return fileName.substring(fileName.lastIndexOf("."));
 	}
 
 	/**
@@ -94,7 +104,7 @@ public class ImageUtil {
 	 * 
 	 * @return
 	 */
-	private static String getRandomFileName() {
+	public static String getRandomFileName() {
 		// 获取随机五位数
 		int rannum = r.nextInt(89999) + 10000;
 		String nowTimeStr = sDateFormat.format(new Date());
@@ -105,5 +115,6 @@ public class ImageUtil {
 		Thumbnails.of(new File("C:\\Users\\louis\\Pictures\\timg.jpg")).size(200, 200)
 				.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
 				.outputQuality(0.8f).toFile("C:\\Users\\louis\\Pictures\\timgnew.jpg");
+		System.out.println(basePath);
 	}
 }
