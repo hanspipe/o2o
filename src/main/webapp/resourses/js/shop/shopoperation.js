@@ -6,7 +6,6 @@ $(function(){
 	var initUrl = '/o2o/shopadmin/getshopinitinfo';
 	// 注册店铺的URL
 	var registerShopUrl = '/o2o/shopadmin/registershop';
-	alert(initUrl);
 	getShopInitInfo();
 	function getShopInitInfo(){
 		$.getJSON(initUrl, function(data) {
@@ -50,7 +49,12 @@ $(function(){
 			formData.append('shopImg', shopImg);
 			// 将shop json对象转成字符流保存至表单对象key为shopStr的的键值对里
 			formData.append('shopStr', JSON.stringify(shop));
-			
+			var verifyCodeActual = $('#j_captcha').val();
+			if (!verifyCodeActual) {
+				$.toast('请输入验证码！');
+				return;
+			} 
+			formData.append('verifyCodeActual', verifyCodeActual);
 			$.ajax({
 				url : registerShopUrl,
 				type : 'POST',

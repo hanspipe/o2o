@@ -28,6 +28,7 @@ import com.louis.o2o.exceptions.ShopOperationException;
 import com.louis.o2o.service.AreaService;
 import com.louis.o2o.service.ShopCategoryService;
 import com.louis.o2o.service.ShopService;
+import com.louis.o2o.util.CodeUtil;
 import com.louis.o2o.util.HttpServletRequestUtil;
 
 @Controller
@@ -66,6 +67,11 @@ public class ShopManagementController {
 	@ResponseBody
 	private Map<String, Object> registerShop(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<>();
+		if(!CodeUtil.checkVerifyCode(request)) {
+			modelMap.put("succsee", false);
+			modelMap.put("errMsg", "验证码输入错误");
+			return modelMap;
+		}
 		// 1.接受并转化相应参数，包括店铺信息以及图片信息
 		String shopStr = HttpServletRequestUtil.getString(request, "shopStr");
 		ObjectMapper mapper = new ObjectMapper();
