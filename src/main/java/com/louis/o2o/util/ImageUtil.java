@@ -110,6 +110,25 @@ public class ImageUtil {
 		String nowTimeStr = sDateFormat.format(new Date());
 		return nowTimeStr + rannum;
 	}
+	
+	/**
+	 * 先判断storePath是文件路径还是目录路径
+	 * 如果是文件路径则删除该文件
+	 * 如果是目录就删除目录下所有文件
+	 * @param stroePath
+	 */
+	public static void deleteFileOrPath(String storePath) {
+		File fileOrPath = new File(PathUtil.getImgBasePath() + storePath);
+		if(fileOrPath.exists()) {
+			if(fileOrPath.isDirectory()) {
+				File[] files = fileOrPath.listFiles();
+				for(int i = 0; i < files.length; i++)
+					files[i].delete();
+			}
+			fileOrPath.delete();
+		}
+		
+	}
 
 	public static void main(String[] args) throws IOException {
 		Thumbnails.of(new File("C:\\Users\\louis\\Pictures\\timg.jpg")).size(200, 200)

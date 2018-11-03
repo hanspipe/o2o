@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Date;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,6 +19,7 @@ import com.louis.o2o.entity.PersonInfo;
 import com.louis.o2o.entity.Shop;
 import com.louis.o2o.entity.ShopCategory;
 import com.louis.o2o.enums.ShopStateEnum;
+import com.louis.o2o.exceptions.ShopOperationException;
 
 public class ShopServiceTest extends BaseTest{
 
@@ -25,6 +27,18 @@ public class ShopServiceTest extends BaseTest{
 	private ShopService shopService;
 	
 	@Test
+	public void testModifyShop() throws ShopOperationException, FileNotFoundException{
+		Shop shop = new Shop();
+		shop.setShopId(1L);
+		shop.setShopName("一点点");
+		File shopImg = new File("C:/Users/louis/Pictures/12.jpg");
+		InputStream is = new FileInputStream(shopImg);
+		ShopExecution se = shopService.modifyShop(shop, is, "12.jpg");
+		System.out.println(se.getShop().getShopImg());
+	}
+	
+	@Test
+	@Ignore
 	public void testAddShop() throws FileNotFoundException {
 		Shop shop = new Shop();
 		PersonInfo owner = new PersonInfo();
