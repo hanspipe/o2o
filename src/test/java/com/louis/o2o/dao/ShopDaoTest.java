@@ -20,6 +20,7 @@ public class ShopDaoTest extends BaseTest{
 		private ShopDao shopDao;
 		
 		@Test
+		
 		public void testQueryByShopId() {
 			long shopId = 1;
 			Shop shop = shopDao.queryByShopId(shopId);
@@ -58,8 +59,8 @@ public class ShopDaoTest extends BaseTest{
 		public void testUpdateShop() {
 			Shop shop = new Shop();
 			shop.setShopId(1L);
-			shop.setShopDesc("测试的描述");
-			shop.setShopAddr("测试地址");
+			shop.setShopDesc("sad");
+			shop.setShopAddr("测试sad");
 			shop.setLastEditTime(new Date());
 			int effectedNum = shopDao.updateShop(shop);
 			assertEquals(1, effectedNum);

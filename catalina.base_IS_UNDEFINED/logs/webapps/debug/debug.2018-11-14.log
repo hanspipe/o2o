@@ -1,0 +1,17 @@
+2018-11-14 20:01:52:417 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?,?,?,?, ?,?,?,?,?, ?,?, ?,?) 
+2018-11-14 20:01:52:443 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺(String), test(String), test(String), test(String), test(String), null, 2018-11-14 20:01:52.118(Timestamp), null, 1(Integer), 审核中(String)
+2018-11-14 20:01:52:451 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - <==    Updates: 1
+2018-11-14 20:15:43:929 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
+2018-11-14 20:15:43:957 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - ==> Parameters: sad(String), 测试sad(String), 2018-11-14 20:15:43.631(Timestamp), 1(Long)
+2018-11-14 20:15:43:963 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2018-11-14 21:34:53:563 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?,?,?,?, ?,?,?,?,?, ?,?, ?,?) 
+2018-11-14 21:34:53:589 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺9(String), test9(String), test9(String), test9(String), null, null, 2018-11-14 21:34:53.544(Timestamp), 2018-11-14 21:34:53.544(Timestamp), 0(Integer), 审核中(String)
+2018-11-14 21:34:53:591 [main] DEBUG com.louis.o2o.dao.ShopDao.insertShop - <==    Updates: 1
+2018-11-14 21:34:53:606 [main] DEBUG com.louis.o2o.service.impl.ShopServiceImpl - dest:upload\item\shop\19\
+2018-11-14 21:34:53:624 [main] DEBUG com.louis.o2o.util.ImageUtil - current relativeAddr:upload\item\shop\19\2018111421345315873.jpg
+2018-11-14 21:34:53:625 [main] DEBUG com.louis.o2o.util.ImageUtil - current whole Addr:C:\Users\louis\Pictures\upload\item\shop\19\2018111421345315873.jpg
+2018-11-14 21:34:53:625 [main] DEBUG com.louis.o2o.util.ImageUtil - basePath:/D:/IDE/java-oxygen/eclipse-workspace/o2o/target/test-classes/
+2018-11-14 21:34:54:036 [main] DEBUG com.louis.o2o.service.impl.ShopServiceImpl - shopImgAddr:upload\item\shop\19\2018111421345315873.jpg
+2018-11-14 21:34:54:056 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
+2018-11-14 21:34:54:057 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的店铺9(String), test9(String), test9(String), test9(String), upload\item\shop\19\2018111421345315873.jpg(String), 2018-11-14 21:34:53.544(Timestamp), 0(Integer), 审核中(String), 2(Integer), 1(Long), 19(Long)
+2018-11-14 21:34:54:058 [main] DEBUG com.louis.o2o.dao.ShopDao.updateShop - <==    Updates: 1
